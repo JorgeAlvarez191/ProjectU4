@@ -1,38 +1,172 @@
 .App {
+}
+
+
+body{
+  background-repeat: no-repeat;
+  background-image: linear-gradient(357deg,#F5B535 40%,#cf8f11,#bddd1a,#9ebd21);            
+}
+
+.Layout{
+  height: 3.2vw;
+  background-color: #5FC94E;
+  margin: -17px 0px 0px -48px;
+  box-shadow:  2px 4px 13px 0 rgb(0 0 0 / 79%);
+  width: 100vw;
+}
+
+li a { 
+  display: inline-block;
+  color: black;
+  background-color: #3a912c;
+  font-size: larger;
   text-align: center;
+  padding: 0.9vw  20px;  
+  text-decoration: none;
+  width: 8vw;
+  height: 1.4vw;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+li a:hover{
+background-color: rgb(179, 181, 35);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a{
+  text-decoration: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.activacion{
+  position: relative;
+  display: inline-block;
 }
 
-.App-link {
-  color: #61dafb;
+.activacion:hover .elementos{
+  display: block;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.elementos{
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  box-shadow: 0 10px 18px 0 rgba(0, 0, 0, 2);
+  z-index: 1;
+}
+
+.elementos a{
+  min-width: 160px;
+  padding: 12px 15px;
+  word-wrap:break-word;
+  text-decoration: none;
+  display: block;
+}
+
+.elementos a:hover{
+  background-color: rgb(179, 181, 35);
+} 
+
+#div_Descripcion1{
+  margin: 39px 0px 20px 0px;
+  width: 50vw;
+  height: 20vw;
+  border: 2px solid orange;
+  background-color:  rgb(233 232 104);
+  float: left;
+  border-radius: 25px;
+  background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+#div_imagen1{
+  margin: 39px 0px 20px 0px;
+  width: 40vw;
+  height: 20vw;
+  border: 2px solid rgb(12, 12, 12);
+  float: right;
+  border-radius: 25px;
+  background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    background-image: url(Tostiloco.jpg);
+
+}
+#div_Descripcion2{
+  margin: 39px 0px 20px 0px;
+  width: 50vw;
+  height: 20vw;
+  border: 2px solid orange;
+  background-color:  #72d563;
+  float: right;
+  border-radius: 25px;
+}
+
+#div_int{
+  margin: 39px 0px 20px 250px;
+  width: 50vw;
+  height: 27vw;
+  border: 4px solid #661d13;
+  background-color: #f1fc76;
+  float: left;
+  border-radius: 25px;
+}
+
+#div_imagen2{
+  margin: 39px 0px 20px 0px;
+  width: 40vw;
+  height: 20vw;
+  border: 2px solid rgb(12, 12, 12);
+  float: left;
+  border-radius: 25px;
+  background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+  background-image: url(Tostielote.jpg);
+}
+
+#formu{
+ margin: 12px 16px 1px 18px;
+ text-align: center;
+}
+
+#modal{
+  width: 40vw;
+  height: 20vw;
+  border: 6px outset rgb(246 32 32);
+  position: fixed;
+  left: 30%;
+  background-color: #d48639;
+  box-shadow: 2px 10px 20px 0px #000000c9;
+}
+
+#mailh5{
+  position: absolute;
+  bottom: -20px;
+}
+
+#bClose{
+  float: right;
+  position: absolute;
+  bottom: 7px;
+  right: 12px;
+  height: 2vw;
+  width: 7vw;        }
+
+#imgMod{
+  height: 59%;
+  width: 64%;
+  position: absolute;
+  bottom: 29px;
+  left: 23px;
+}
+
+#buttMod{
+  height: 2vw;
+   width: 8vw;
+
+}
+label{
+  font-size: 1.3em;
+}
+
+.valores{
+  background-color: chartreuse;
 }
