@@ -1,9 +1,12 @@
-import logo from './logo.svg';
+import logo from './logotostitos.png';
 import './App.css';
 import Tostiloco from './Tostiloco.jpg'
 import Tostielote from './Tostielote.jpg'
+import Tostinachos from './Tostinachos.jpeg'
 import {BottomNavigation, BottomNavigationAction} from '@mui/material'
 import { useState } from 'react';
+import Button from '@mui/material/Button';
+import AddShoppingCartSharpIcon from '@mui/icons-material/AddShoppingCartSharp';
 
 
 
@@ -15,11 +18,20 @@ const [value,setValue]= useState(0);
 
 const MuiButtonStyle = {
     color:'black',
-    textAling: 'left',
+    textAling: 'right',
     fontWeight: 'bold',
     fontSize: 'large'
 }
+const OverDriveBottom  = {
+    '&:hover': {
+        color: 'black',
+        backgroundColor: 'green '
+        }
+}
 
+const Preparacion = [ "Una cama de tostitos recostado junto con 2 elotes desgranados con delicadeza con queso cottage, chipotle, tajin, mayonesa y sudor de dioses como no puede faltar Mantequila.","Una cama de tostitos baniado en un glaseado delicioso de clamatocon una rociada de limon recostado junto a cacahuates y chacachacas.","Tostitos bañados en queso chedar y jalapeños"]
+const Sabores = [ "Tostielotes","Tostilocos","Tostinachos"]
+const imgs = [Tostielote,Tostiloco,Tostinachos]
 
   return (
     <div className="App">
@@ -30,106 +42,68 @@ const MuiButtonStyle = {
                 value={value}
                 onChange={(event, newVal) => {
                     setValue(newVal)
+                    console.log(value)
                 }}  
 
-                style={{backgroundColor: '#5FC94E', justifyContent: 'left'}}
-            
+                style={{backgroundColor: '#5FC94E', justifyContent: 'right'}}
             >
+              
                 <BottomNavigationAction
-                    style={
-                      MuiButtonStyle
-                    } 
-                    sx={{   
-                        '&:hover': {
-                        color: 'black',
-                        backgroundColor: 'green '
-                        }
-                    }}
-                    label="Encuestas"
+                    style={ MuiButtonStyle} 
+                    sx={ OverDriveBottom}
+                    label="Tostielote"
+                />
+
+                <BottomNavigationAction
+                  style={ MuiButtonStyle} 
+                  sx={ OverDriveBottom}
+                    label="Tostilocos"
                 />
 
                 <BottomNavigationAction
                     style={ MuiButtonStyle} 
-                    sx={{   
-                        '&:hover': {
-                        color: 'Yellow',
-                        backgroundColor: 'green '
-                        }
-                    }}
-                    label="Productos"
+                    sx={ OverDriveBottom}
+                    label="Tostinachos"
                 />
-
-                <BottomNavigationAction
-                    style={MuiButtonStyle} 
-                    sx={{   
-                        '&:hover': {
-                        color: 'black',
-                        backgroundColor: 'green '
-                        }
-                    }}
-                    label="Sobre Nosotros"
+        
+                <img 
+                    id='logo'
+                    src={logo}
                 />
-
             </BottomNavigation>
          
         </div>
+    {/* Fin de la region de nav */}
 
-    <div>
-            <div id="div_Descripcion1">
-                <h1>Tostiloco</h1>
-                <h2>Preparacion:</h2>
-               <p> Una cama de tostitos baniado en un glaseado delicioso de clamato
-                con una rociada de limon recostado junto a cacahuates y chacachacas.
-            </p>
-            </div>
-
-            <div id="div_imagen1">
-
-            </div>
-
-    </div>
 
     <div id="Mod">
+
+
+        <div id="Tittle">
+             <h1><center>{Sabores[value]}</center></h1>
+        </div>
+
         <div id="div_Descripcion2" >
-            <h1>Tostielotes</h1>
             <h2>Preparacion:</h2>
-               <p> Una cama de tostitos recostado junto con 2 elotes desgranados con delicadeza
-                con queso cottage, chipotle, tajin, mayonesa y sudor de dioses como no puede faltar Mantequila.
-            </p>
+               <p> { Preparacion[value]} </p>
         </div>
 
-        <div id="div_imagen2"  >
+        <div id="div_imagen2" style={{ backgroundImage: `url(${imgs[value]})` }}>
 
         </div>
     </div>
 
-    <div>
-        <div id="div_int">
-            {/* <form id="formu" name="formu"> <h2>Llena este formulario Y participa para un cupon:</h2><br/><br/>
-                <fieldset aria-required="true" style="border: none;">
-                <label htmlFor="cname">Nombr/e Completo:</label> <br/>
-                <input className ="valores "type="text" name="Name" required /><br/><br/>
+    <Button
+    id='button'
+    variant='contained'
+    endIcon ={<AddShoppingCartSharpIcon/>}
+    >
+        ORDENAR YA
+    </Button>
 
-                <label htmlFor="cedad">Edad:</label><br/>
-                <input className ="valores " type="number" name="age" min="0" required/><br/><br/>
 
-                
-                <label htmlFor="cmail">Correo:</label>   <br/>
-                <input  className ="valores "type="email" name="email" required/><br/><br/>
+    <p id='Copy'>Derechos reservados de Copyrights por Tosticentro Tuchicolote <span style={{ fontSize: "x-small"}}>©</span> 2022.</p>
 
-                <label htmlFor="cLista">Sabor Preferido:</label>  <br/> 
-                <select className ="valores " name="lista" required>
-                    <option>Flaming Hot</option>
-                    <option>Salsa Verde</option>
-                    <option>Azul</option>
-                  </select><br/><br/>
-
-                <input id = "buttMod" type="submit" name="formu" value="Subir"  onclick="modal()"/>
-            </fieldset>
-            </form> */}
-
-        </div>
-    </div>
 
   </div>
   );
