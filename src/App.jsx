@@ -14,19 +14,25 @@ import AddShoppingCartSharpIcon from '@mui/icons-material/AddShoppingCartSharp';
 
 function App() {
 
-const [value,setValue]= useState(0);
+    const MuiButtonStyle = {
+        color:'black',
+        textAling: 'right',
+        fontWeight: 'bold',
+        fontSize: 'large'
+    }
+    const OverDriveBottom  = {
+        '&:hover': {
+            color: 'black',
+            backgroundColor: 'green '
+            }
+    }
 
-const MuiButtonStyle = {
-    color:'black',
-    textAling: 'right',
-    fontWeight: 'bold',
-    fontSize: 'large'
-}
-const OverDriveBottom  = {
-    '&:hover': {
-        color: 'black',
-        backgroundColor: 'green '
-        }
+const [value,setValue]= useState(0);
+const [open,setOpen] = useState(false);
+
+
+const OpenModal = () => {
+setOpen(!open)
 }
 
 const Preparacion = [ "Una cama de tostitos recostado junto con 2 elotes desgranados con delicadeza con queso cottage, chipotle, tajin, mayonesa y sudor de dioses como no puede faltar Mantequila.","Una cama de tostitos baniado en un glaseado delicioso de clamatocon una rociada de limon recostado junto a cacahuates y chacachacas.","Tostitos bañados en queso chedar y jalapeños"]
@@ -97,6 +103,7 @@ const imgs = [Tostielote,Tostiloco,Tostinachos]
     id='button'
     variant='contained'
     endIcon ={<AddShoppingCartSharpIcon/>}
+    onClick={OpenModal}
     >
         ORDENAR YA
     </Button>
