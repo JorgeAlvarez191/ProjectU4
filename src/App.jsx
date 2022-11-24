@@ -7,7 +7,7 @@ import {BottomNavigation, BottomNavigationAction} from '@mui/material'
 import { useState } from 'react';
 import Button from '@mui/material/Button';
 import AddShoppingCartSharpIcon from '@mui/icons-material/AddShoppingCartSharp';
-
+import {Modalin} from './shopModal.tsx';
 
 
 
@@ -71,15 +71,19 @@ const imgs = [Tostielote,Tostiloco,Tostinachos]
                     sx={ OverDriveBottom}
                     label="Tostinachos"
                 />
-        
+
+                <a id='logoA' href='https://tostitos.com.mx'>
                 <img 
                     id='logo'
                     src={logo}
                 />
+                </a>
             </BottomNavigation>
          
         </div>
     {/* Fin de la region de nav */}
+            
+
 
 
     <div id="Mod">
@@ -98,6 +102,16 @@ const imgs = [Tostielote,Tostiloco,Tostinachos]
 
         </div>
     </div>
+    
+    <Modalin
+        Open={open}
+        setOpen={setOpen}
+
+    >
+
+    </Modalin>
+
+    <p id='Copy2'>Si desea saborear uno de nuestros delicioso productos puede pre-ordenar uno tostitos preparados a su eleccion para luego recogerlos.</p>
 
     <Button
     id='button'

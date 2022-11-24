@@ -19,7 +19,7 @@ body{
   border-radius: 25px;
   position: fixed;
   right: 2%;
-  bottom: 37%;
+  bottom: 40%;
 }
 
 
@@ -68,10 +68,25 @@ body{
   border-radius: 24px;
   width: 15%;
   height: 5%;
+  background-color: #43af0b;
 }
 
 #Copy{
   position: fixed;
     bottom: 0%;
     left: 37%;
+}
+#Copy2{
+position: absolute;
+bottom: 30%;
+left: 33%;
+font-family: cursive;
+font-size: large;
+width: 30%;
+text-align: center;
+}
+
+#logoA{
+position: relative;
+right: 86%;
 }
