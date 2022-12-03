@@ -8,9 +8,8 @@ import { useState } from 'react';
 import Button from '@mui/material/Button';
 import AddShoppingCartSharpIcon from '@mui/icons-material/AddShoppingCartSharp';
 import {Modalin} from './shopModal.tsx';
-
-
-
+import {Modalon} from './RegistroModal.tsx';
+import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
 
 function App() {
 
@@ -29,10 +28,14 @@ function App() {
 
 const [value,setValue]= useState(0);
 const [open,setOpen] = useState(false);
+const [open1,setOpen1] = useState(false);
 
 
 const OpenModal = () => {
 setOpen(!open)
+}
+const OpenModal1 = () => {
+setOpen1(!open)
 }
 
 const Preparacion = [ "Una cama de tostitos recostado junto con 2 elotes desgranados con delicadeza con queso cottage, chipotle, tajin, mayonesa y sudor de dioses como no puede faltar Mantequila.","Una cama de tostitos baniado en un glaseado delicioso de clamatocon una rociada de limon recostado junto a cacahuates y chacachacas.","Tostitos bañados en queso chedar y jalapeños"]
@@ -106,10 +109,11 @@ const imgs = [Tostielote,Tostiloco,Tostinachos]
     <Modalin
         Open={open}
         setOpen={setOpen}
-
-    >
-
-    </Modalin>
+    />
+    <Modalon
+        Open={open1}
+        setOpen={setOpen1}
+    />
 
     <p id='Copy2'>Si desea saborear uno de nuestros delicioso productos puede pre-ordenar uno tostitos preparados a su eleccion para luego recogerlos.</p>
 
@@ -120,6 +124,15 @@ const imgs = [Tostielote,Tostiloco,Tostinachos]
     onClick={OpenModal}
     >
         ORDENAR YA
+    </Button>
+
+    <Button
+    id='button2'
+    variant='contained'
+    endIcon ={<PersonOutlinedIcon/>}
+    onClick={OpenModal1}
+    >
+        Ver Usuarios
     </Button>
 
 
